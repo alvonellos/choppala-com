@@ -1,48 +1,54 @@
-pipeline{
+pipeline {
     agent {
         docker {
             dockerfile true
         }
     }
 
-    stages {
-    stage('Build') {
-        steps {
-            sh 'mvn -B -DskipTests clean package'
-        }
+    environment {
+        dockerImageName = 'alvonellos/choppala-www'
+        // Define your Docker image name
     }
 
-    stage('Test') {
-        steps {
-            sh 'mvn test'
-        }
-
-        post {
-            always {
-                junit 'target/surefire-reports/*.xml'
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
             }
         }
-    }
 
-    stage('Deliver'){
-        steps {
-            sh './jenkins/scripts/deliver.sh'
-        }
-    }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
 
-    stage('Build image') {
-      steps{
-        script {
-          dockerImage = docker.build dockerimagename
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
         }
-      }
-    }
 
-    stage('Deploying container to Kubernetes') {
-      steps {
-        script {
-          kubernetesDeploy(configs: "kubernetes/deployment.yaml", "kubernetes/service.yaml")
+        stage('Deliver') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+            }
         }
-      }
+
+        stage('Build image') {
+            steps {
+                script {
+                    def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}")
+                }
+            }
+        }
+
+        stage('Deploying container to Kubernetes') {
+            steps {
+                script {
+                    kubernetesDeploy(configs: "kubernetes/deployment.yaml", "kubernetes/service.yaml")
+                }
+            }
+        }
     }
 }

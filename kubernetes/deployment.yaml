@@ -15,7 +15,8 @@ spec:
         app: choppala-www
     spec:
       containers:
-        - name: choppala.com #The name of the container
-          image: alvonellos/choppala.com:latest #The Docker image for building the React.js application container
+        - name: choppala-www #The name of the container
+          image: alvonellos/choppala-www:latest #The Docker image for building the React.js application container
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080 #The port for the React.js application   container
