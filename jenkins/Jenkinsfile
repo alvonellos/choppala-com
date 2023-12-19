@@ -46,7 +46,9 @@ pipeline {
         stage('Deploying container to Kubernetes') {
             steps {
                 script {
+                    echo "Starting deployment..."
                     kubernetesDeploy(configs: "kubernetes/deployment.yaml", "kubernetes/service.yaml")
+                    echo "Deployment completed."
                 }
             }
         }
