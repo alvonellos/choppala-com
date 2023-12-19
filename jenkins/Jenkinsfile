@@ -43,6 +43,18 @@ pipeline {
             }
         }
 
+        stage('Push image to Docker Hub') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', '65fbcb2c-d252-4e31-bacc-8e63f06f3d87') {
+                        // Use the ID of the Jenkins credentials that store Docker Hub username and password
+                        def dockerImage = docker.image("${dockerImageName}:${env.BUILD_NUMBER}")
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+
         stage('Deploying container to Kubernetes') {
             steps {
                 script {
