@@ -59,4 +59,7 @@
     <orderEntry type="library" name="Maven: org.webjars:popper.js:2.9.2" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery:3.6.0" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="35f1af20-e66f-4fae-8ef7-8f63b7e62d60" />
+  </component>
 </module>
