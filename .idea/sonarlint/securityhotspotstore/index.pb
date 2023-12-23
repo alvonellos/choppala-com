@@ -90,3 +90,5 @@ w
 G.idea/sonarlint/issuestore/1/0/10a03f31c4dce92cb371e761ce9429428bb6c176,0\3\030ed2ccb712537825891dfda283154162e458a8
 w
 G.idea/sonarlint/issuestore/1/0/10a103b8f0fe4ee4a6da18610ca457285f908455,8\f\8f5303a863d691b4cb20b91c7e938d3b89238cc7
+A
+system.properties,a\5\a5db35984da8ffa0e255c16a2e31ae7b26e7d222
