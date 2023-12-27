@@ -9,7 +9,6 @@ pipeline{
         dockerImageName = 'alvonellos/choppala-www'
         // Define your Docker image name
     }
-
     stages {
         stage('Build') {
             steps {
@@ -54,14 +53,4 @@ pipeline{
             }
         }
     }
-
-        stage('Deploying container to Kubernetes') {
-            steps {
-                script {
-                    echo "Starting deployment..."
-                    kubernetesDeploy(configs: "kubernetes/deployment.yaml", "kubernetes/service.yaml")
-                    echo "Deployment completed."
-                }
-            }
-        }
 }
