@@ -1,4 +1,4 @@
-pipeline{
+pipeline {
     agent {
         docker {
             dockerfile true
@@ -8,7 +8,9 @@ pipeline{
     environment {
         dockerImageName = 'alvonellos/choppala-www'
         // Define your Docker image name
+        kubernetesNamespace = 'choppala-www' // Update with your Kubernetes namespace
     }
+
     stages {
         stage('Build') {
             steps {
@@ -16,17 +18,17 @@ pipeline{
             }
         }
 
-    stage('Test') {
-        steps {
-            sh 'mvn test'
-        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
 
-        post {
-            always {
-                junit 'target/surefire-reports/*.xml'
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
         }
-    }
 
         stage('Deliver') {
             steps {
@@ -34,21 +36,33 @@ pipeline{
             }
         }
 
-    stage('Build image') {
-        steps {
-            script {
-                def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}", "--build-arg JAR_FILE=target/*.jar")
+        stage('Build image') {
+            steps {
+                script {
+                    def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}", "--build-arg JAR_FILE=target/*.jar")
+                }
             }
         }
-    }
 
-    stage('Push image to Docker Hub') {
-        steps {
-            script {
-                docker.withRegistry('https://registry.hub.docker.com', '65fbcb2c-d252-4e31-bacc-8e63f06f3d87') {
-                    // Use the ID of the Jenkins credentials that store Docker Hub username and password
-                    def dockerImage = docker.image("${dockerImageName}:${env.BUILD_NUMBER}")
-                    dockerImage.push()
+        stage('Push image to Docker Hub') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.docker.io', '65fbcb2c-d252-4e31-bacc-8e63f06f3d87') {
+                        // Use the ID of the Jenkins credentials that store Docker Hub username and password
+                        def dockerImage = docker.image("${dockerImageName}:${env.BUILD_NUMBER}")
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    // Use the Kubernetes plugin to deploy to the cluster
+                    def kubeconfig = credentials('kubernetes cluster local') // Use the ID of the Kubernetes credential
+                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/deployment.yaml -n ${kubernetesNamespace}"
+                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/service.yaml -n ${kubernetesNamespace}"
                 }
             }
         }
