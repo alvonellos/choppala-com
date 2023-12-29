@@ -77,10 +77,8 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    // Use the Kubernetes plugin to deploy to the cluster
-                    def kubeconfig = credentials('cluster') // Use the ID of the Kubernetes credential
-                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/deployment.yaml -n choppala-www"
-                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/service.yaml -n choppala-www"
+                    sh "kubectl apply -f kubernetes/deployment.yaml -n choppala-www"
+                    sh "kubectl apply -f kubernetes/service.yaml -n choppala-www"
                 }
             }
         }
