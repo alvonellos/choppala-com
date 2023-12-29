@@ -31,9 +31,16 @@ pipeline {
         }
 
         stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
+          steps {
+              script {
+                  try {
+                      sh './jenkins/scripts/deliver.sh'
+                  } catch (Exception e) {
+                      echo "Failed to execute deliver.sh: ${e.message}"
+                      error("Delivery failed")
+                  }
+              }
+          }
         }
 
         stage('Build image') {
@@ -61,8 +68,8 @@ pipeline {
             steps {
                 script {
                     // Use the Kubernetes plugin to deploy to the cluster
-                    def kubeconfig = credentials('kubernetes cluster local') // Use the ID of the Kubernetes credential
-                    kubernetesDeploy(configs: "kubernetes/deployment.yaml", "kubernetes/service.yaml")
+                    def kubectl = tool 'kubectl'
+                    sh "${kubectl} apply -f kubernetes/"
                 }
             }
         }
