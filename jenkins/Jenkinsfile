@@ -4,7 +4,7 @@ pipeline {
         dockerImageName = 'alvonellos/choppala-www'
         // Define your Docker image name
         kubernetesNamespace = 'choppala-www' // Update with your Kubernetes namespace
-        kubeconfig = credentials('kubernetes cluster local') // Use the ID of the Kubernetes credential
+        kubeconfig = credentials('cluster') // Use the ID of the Kubernetes credential
     }
 
     stages {
