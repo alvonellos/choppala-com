@@ -77,7 +77,8 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    sh "kubectl apply -f kubernetes/deployment.yaml -n choppala-www"
+                    sh "export BUILD_NUMBER=${env.BUILD_NUMBER}"
+                    sh "cat kubernetes/deployment.yaml | envsubst | kubectl apply -f - -n choppala-www"
                     sh "kubectl apply -f kubernetes/service.yaml -n choppala-www"
                 }
             }
