@@ -9,17 +9,20 @@ pipeline {
         dockerImageName = 'alvonellos/choppala-www'
         // Define your Docker image name
         kubernetesNamespace = 'choppala-www' // Update with your Kubernetes namespace
+        kubeconfig = credentials('kubernetes cluster local') // Use the ID of the Kubernetes credential
     }
 
     stages {
         stage('Build') {
             steps {
+                echo 'Building...'
                 sh 'mvn -B -DskipTests clean install -U'
             }
         }
 
         stage('Test') {
             steps {
+                echo 'Testing...'
                 sh 'mvn test'
             }
 
@@ -31,20 +34,15 @@ pipeline {
         }
 
         stage('Deliver') {
-          steps {
-              script {
-                  try {
-                      sh './jenkins/scripts/deliver.sh'
-                  } catch (Exception e) {
-                      echo "Failed to execute deliver.sh: ${e.message}"
-                      error("Delivery failed")
-                  }
-              }
-          }
+            steps {
+                echo 'Delivering...'
+                sh './jenkins/scripts/deliver.sh'
+            }
         }
 
         stage('Build image') {
             steps {
+                echo 'Building Docker image...'
                 script {
                     def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}", "--build-arg JAR_FILE=target/*.jar")
                 }
@@ -53,6 +51,7 @@ pipeline {
 
         stage('Push image to Docker Hub') {
             steps {
+                echo 'Pushing Docker image to Docker Hub...'
                 script {
                     docker.withRegistry('https://registry.docker.io', '65fbcb2c-d252-4e31-bacc-8e63f06f3d87') {
                         // Use the ID of the Jenkins credentials that store Docker Hub username and password
@@ -63,12 +62,14 @@ pipeline {
             }
         }
 
-
         stage('Deploy to Kubernetes') {
             steps {
+                echo 'Deploying to Kubernetes...'
                 script {
-                    // Use the Kubernetes plugin to deploy to the cluster
                     def kubectl = tool 'kubectl'
+                    echo "kubectl tool path: ${kubectl}"
+                    sh "${kubectl} version"
+                    sh "${kubectl} config view"
                     sh "${kubectl} apply -f kubernetes/"
                 }
             }
