@@ -61,7 +61,7 @@ pipeline {
         stage('Delete Old Namespace') {
             steps {
                 script {
-                    sh "kubectl delete namespace ${KUBE_NAMESPACE} --ignore-not-found=true"
+                    sh "kubectl delete namespace choppala-www --ignore-not-found=true"
                 }
             }
         }
@@ -69,7 +69,7 @@ pipeline {
        stage('Create New Namespace') {
             steps {
                 script {
-                    sh "kubectl create namespace ${KUBE_NAMESPACE} --dry-run=client -o yaml | kubectl apply -f -"
+                    sh "kubectl create namespace choppala-www --dry-run=client -o yaml | kubectl apply -f -"
                 }
             }
         }
@@ -79,8 +79,8 @@ pipeline {
                 script {
                     // Use the Kubernetes plugin to deploy to the cluster
                     def kubeconfig = credentials('cluster') // Use the ID of the Kubernetes credential
-                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/deployment.yaml -n ${kubernetesNamespace}"
-                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/service.yaml -n ${kubernetesNamespace}"
+                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/deployment.yaml -n choppala-www"
+                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/service.yaml -n choppala-www"
                 }
             }
         }
