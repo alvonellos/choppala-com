@@ -44,16 +44,6 @@ pipeline {
             }
         }
 
-        stage('List pods') {
-            steps {
-                withKubeConfig([credentialsId: 'cluster']) {
-                    sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.28.5/bin/linux/amd64/kubectl"'
-                    sh 'chmod u+x ./kubectl'
-                    sh './kubectl get pods'
-                }
-            }
-        }
-
 
         stage('Check Kubernetes') {
             steps {
