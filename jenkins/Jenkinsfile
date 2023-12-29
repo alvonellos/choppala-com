@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 script {
-                    def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}", "--build-arg JAR_FILE=target/*.jar")
+                    def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}")
                 }
             }
         }
