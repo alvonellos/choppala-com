@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     environment {
         dockerImageName = 'alvonellos/choppala-www'
         // Define your Docker image name
