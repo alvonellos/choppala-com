@@ -44,15 +44,53 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes') {
+        node {
+          stage('List pods') {
+            withKubeConfig([credentialsId: 'kubernetes-config']) {
+                sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'
+                sh 'chmod u+x ./kubectl'
+                sh './kubectl get pods'
+            }
+          }
+        }
+
+
+        stage('Check Kubernetes') {
             steps {
-                echo 'Deploying to Kubernetes...'
+                echo 'Getting kubectl'
                 script {
-                    def kubectl = tool 'kubectl'
-                    echo "kubectl tool path: ${kubectl}"
+                    sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'
+                    sh 'chmod u+x ./kubectl'
+                    sh './kubectl get pods'
                     sh "${kubectl} version"
                     sh "${kubectl} config view"
-                    sh "${kubectl} apply -f kubernetes/"
+                }
+            }
+        }
+
+        stage('Delete Old Namespace') {
+            steps {
+                script {
+                    sh "kubectl delete namespace ${KUBE_NAMESPACE} --ignore-not-found=true"
+                }
+            }
+        }
+
+       stage('Create New Namespace') {
+            steps {
+                script {
+                    sh "kubectl create namespace ${KUBE_NAMESPACE} --dry-run=client -o yaml | kubectl apply -f -"
+                }
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    // Use the Kubernetes plugin to deploy to the cluster
+                    def kubeconfig = credentials('cluster') // Use the ID of the Kubernetes credential
+                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/deployment.yaml -n ${kubernetesNamespace}"
+                    sh "kubectl --kubeconfig=${kubeconfig} apply -f kubernetes/service.yaml -n ${kubernetesNamespace}"
                 }
             }
         }
