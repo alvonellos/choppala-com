@@ -6,8 +6,6 @@ spec:
   selector:
     app: choppala-www
   type: LoadBalancer #Type of the Kubernetes Service
-  externalIPs:
-    - 192.168.0.70
   ports:
     - protocol: TCP
       port: 80 #Service port

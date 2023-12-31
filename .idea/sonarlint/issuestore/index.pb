@@ -212,5 +212,3 @@ Q.idea/sonarlint/securityhotspotstore/1/e/1ef055b8acc07e8f2b45ccf7092757762c9dba
 ,src/main/java/com/choppala/website/Main.java,6\5\6527391869e8458a7327ed1151108ea9858d3bef
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-J
-jenkins/scripts/deliver.sh,1\a\1a0b6ec6ea03eb62c5fbe2bd66fbf3bf6aee69ab
