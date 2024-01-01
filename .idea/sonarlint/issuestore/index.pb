@@ -32,8 +32,6 @@ G.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,a\e\ae
 Q.idea/sonarlint/securityhotspotstore/8/5/851938906510cbd3504cd68440dc52662fbf032c,2\4\24a0eb8536d30d2a1004ab5a8c6ae19efaead4dd
 Å
 Q.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,9\0\909762385fc6eb20f922a91c6865741308b57f2c
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 w
 G.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0,f\0\f0e0f9cec86fe4b939ae22be5264c758801eb28f
 Å
@@ -58,8 +56,6 @@ w
 G.idea/sonarlint/issuestore/c/c/cc39a28da712bf0941416ac8652cbc72166afaac,c\e\ce6636a439009c0b038fbcae482acaee874fbb7a
 w
 G.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d,b\4\b4a0b63ce8560bbc5de0f9995c20cc861dc2adb3
-]
--.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 Å
 Q.idea/sonarlint/securityhotspotstore/f/2/f2d409e670ec76019b6c69499222de8a4c6e1071,2\7\271c83149b99644c53fba245222ac8dc42ebbac5
 ;
@@ -90,8 +86,6 @@ w
 G.idea/sonarlint/issuestore/1/0/10a03f31c4dce92cb371e761ce9429428bb6c176,0\3\030ed2ccb712537825891dfda283154162e458a8
 w
 G.idea/sonarlint/issuestore/1/0/10a103b8f0fe4ee4a6da18610ca457285f908455,8\f\8f5303a863d691b4cb20b91c7e938d3b89238cc7
-A
-system.properties,a\5\a5db35984da8ffa0e255c16a2e31ae7b26e7d222
 w
 G.idea/sonarlint/issuestore/0/3/030ed2ccb712537825891dfda283154162e458a8,0\c\0c3c05c2b18505590a392e5404b4d055f24cf3dd
 w
@@ -210,7 +204,5 @@ G.idea/sonarlint/issuestore/5/e/5e4805de49b3e0799af661639276d994cb0e08ae,0\b\0b
 Q.idea/sonarlint/securityhotspotstore/1/e/1ef055b8acc07e8f2b45ccf7092757762c9dbabf,6\e\6e3b4e59bc141768b9fb102d228dc820dab4bbc0
 \
 ,src/main/java/com/choppala/website/Main.java,6\5\6527391869e8458a7327ed1151108ea9858d3bef
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 8
 Procfile,b\c\bc3c68e880d1a01632bce79f69dd1387c7ba9c54
