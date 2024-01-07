@@ -380,5 +380,3 @@ w
 G.idea/sonarlint/issuestore/6/7/6721f43871ba774940754de6808299d6e6301303,f\0\f0f798da09983dc890e638d857657709117f5101
 `
 0src/test/java/com/choppala/website/MainTest.java,1\8\1885823338654b43a669c529da20a614886abb26
-T
-$src/test/java/application.properties,9\e\9e9284afdaadbdfe058077707d17e56c5f9e6c58

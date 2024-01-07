@@ -61,7 +61,7 @@ pipeline {
         stage('Delete Old Namespace') {
             steps {
                 script {
-                    sh "kubectl delete namespace choppala-www --ignore-not-found=true"
+                    sh "kubectl delete namespace ${kubernetesNamespace} --ignore-not-found=true"
                 }
             }
         }
@@ -69,7 +69,15 @@ pipeline {
        stage('Create New Namespace') {
             steps {
                 script {
-                    sh "kubectl create namespace choppala-www --dry-run=client -o yaml | kubectl apply -f -"
+                    sh "kubectl create namespace ${kubernetesNamespace} --dry-run=client -o yaml | kubectl apply -f -"
+                }
+            }
+        }
+
+        stage('Copy vault secret') {
+            steps {
+                script {
+                    sh "kubectl get secret vault --namespace=default -oyaml | grep -v '^\\s*namespace:\\s' | kubectl apply --namespace=${kubernetesNamespace} -f -"
                 }
             }
         }
@@ -78,8 +86,8 @@ pipeline {
             steps {
                 script {
                     sh "export BUILD_NUMBER=${env.BUILD_NUMBER}"
-                    sh "cat kubernetes/deployment.yaml | envsubst | kubectl apply -f - -n choppala-www"
-                    sh "kubectl apply -f kubernetes/service.yaml -n choppala-www"
+                    sh "cat kubernetes/deployment.yaml | envsubst | kubectl apply -f - -n ${kubernetesNamespace}"
+                    sh "kubectl apply -f kubernetes/service.yaml -n ${kubernetesNamespace}"
                 }
             }
         }
