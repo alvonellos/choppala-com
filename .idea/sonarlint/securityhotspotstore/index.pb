@@ -380,3 +380,15 @@ w
 G.idea/sonarlint/issuestore/6/7/6721f43871ba774940754de6808299d6e6301303,f\0\f0f798da09983dc890e638d857657709117f5101
 `
 0src/test/java/com/choppala/website/MainTest.java,1\8\1885823338654b43a669c529da20a614886abb26
+h
+8src/main/java/com/choppala/website/config/AppConfig.java,6\d\6d9989f3327f6fb9f63e7c96eedb099412cff123
+s
+Csrc/main/java/com/choppala/website/config/FaviconConfiguration.java,9\c\9c12894b186fc99f3f3fb297dfbc47278dd643b3
+y
+Isrc/main/java/com/choppala/website/config/StaticContentConfiguration.java,6\0\60490db3873aea9ad4fb72b2984871bb94ea6ca5
+n
+>src/main/java/com/choppala/website/config/ThymeleafConfig.java,1\4\14fa037307617d5b037d7b5ad837b58c4ccc301b
+k
+;src/main/java/com/choppala/website/config/WebMvcConfig.java,e\4\e47dec2d765722a2a2d95668e5b0bc8cc3b797f1
+z
+Jsrc/main/java/com/choppala/website/controller/StaticContentController.java,c\a\caa09ee1118a63952b4f143f4268543105ddfd74

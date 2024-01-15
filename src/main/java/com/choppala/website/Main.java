@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class Main {
     @GetMapping("/")
     public String index() {
-        return "index";
+        return "forward:/index.html";
     }
 
     public static void main(String[] args) {

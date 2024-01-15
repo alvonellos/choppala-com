@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: choppala-www #The name of the Kubernetes Deployment to be created in the Kubernetes cluster
+  name: choppala-www-ng #The name of the Kubernetes Deployment to be created in the Kubernetes cluster
   labels:
-    app: choppala-www
+    app: choppala-www-ng
 spec:
   replicas: 2 #The number of pods to be created in the Kubernetes cluster for the React.js application container
   selector:
     matchLabels:
-      app: choppala-www
+      app: choppala-www-ng
   template:
     metadata:
       labels:
-        app: choppala-www
+        app: choppala-www-ng
     spec:
       containers:
         - name: choppala-www #The name of the container
-          image: alvonellos/choppala-www:$BUILD_NUMBER #The Docker image
+          image: alvonellos/choppala-www-ng:$BUILD_NUMBER #The Docker image
           imagePullPolicy: Always
           ports:
-            - containerPort: 8081
-              hostPort: 8081
+            - containerPort: 8088
+              hostPort: 8088
               hostIP: 0.0.0.0
               protocol: "TCP"
           env:
