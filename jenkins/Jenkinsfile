@@ -58,22 +58,6 @@ pipeline {
             }
         }
 
-        stage('Delete Old Namespace') {
-            steps {
-                script {
-                    sh "kubectl delete namespace ${kubernetesNamespace} --ignore-not-found=true"
-                }
-            }
-        }
-
-       stage('Create New Namespace') {
-            steps {
-                script {
-                    sh "kubectl create namespace ${kubernetesNamespace} --dry-run=client -o yaml | kubectl apply -f -"
-                }
-            }
-        }
-
         stage('Copy vault secret') {
             steps {
                 script {

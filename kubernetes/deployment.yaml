@@ -1,11 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: choppala-www-ng #The name of the Kubernetes Deployment to be created in the Kubernetes cluster
+  name: choppala-www-ng
   labels:
     app: choppala-www-ng
 spec:
-  replicas: 2 #The number of pods to be created in the Kubernetes cluster for the React.js application container
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   selector:
     matchLabels:
       app: choppala-www-ng
