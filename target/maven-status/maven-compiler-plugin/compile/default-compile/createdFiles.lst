@@ -1,0 +1,8 @@
+com\choppala\website\config\WebMvcConfig.class
+com\choppala\website\config\StaticContentConfiguration.class
+com\choppala\website\controller\StaticContentController.class
+com\choppala\website\config\WebMvcConfig$1.class
+com\choppala\website\Main.class
+com\choppala\website\config\AppConfig.class
+com\choppala\website\config\ThymeleafConfig.class
+com\choppala\website\config\FaviconConfiguration.class

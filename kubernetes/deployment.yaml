@@ -15,7 +15,7 @@ spec:
         app: choppala-www-ng
     spec:
       containers:
-        - name: choppala-www #The name of the container
+        - name: choppala-www-ng #The name of the container
           image: alvonellos/choppala-www-ng:$BUILD_NUMBER #The Docker image
           imagePullPolicy: Always
           ports:
