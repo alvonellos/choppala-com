@@ -2,15 +2,7 @@
   <configuration default="false" name="Choppala" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="buildArgs">
-          <list>
-            <DockerEnvVarImpl>
-              <option name="name" value="JAR_FILE" />
-              <option name="value" value="$env:target/*.jar" />
-            </DockerEnvVarImpl>
-          </list>
-        </option>
-        <option name="containerName" value="choppala-www" />
+        <option name="containerName" value="choppala-www-ng" />
         <option name="commandLineOptions" value="-p 127.0.0.1:8088:8088" />
         <option name="sourceFilePath" value="Dockerfile" />
       </settings>

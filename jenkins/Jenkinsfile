@@ -26,6 +26,9 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 script {
+                    echo 'building artifact'
+                    sh 'mvn package'
+                    echo 'building docker image'
                     def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}")
                 }
             }
