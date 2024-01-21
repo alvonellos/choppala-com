@@ -58,21 +58,22 @@ pipeline {
             }
         }
 
-        stage('Delete Old Namespace') {
+       stage('Create New Namespace') {
             steps {
                 script {
-                    sh "kubectl delete namespace choppala-www --ignore-not-found=true"
+                    sh "kubectl create namespace ${kubernetesNamespace} --dry-run=client -o yaml | kubectl apply -f -"
                 }
             }
         }
 
-       stage('Create New Namespace') {
+        stage('Copy vault secret') {
             steps {
                 script {
-                    sh "kubectl create namespace choppala-www --dry-run=client -o yaml | kubectl apply -f -"
+                    sh "kubectl get secret vault --namespace=default -o yaml | grep -v '^\\s*namespace:\\s' | kubectl replace --force --namespace=${kubernetesNamespace} -f -"
                 }
             }
         }
+
 
         stage('Deploy to Kubernetes') {
             steps {
