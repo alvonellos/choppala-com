@@ -1,7 +1,19 @@
 <div th:fragment="header(title, cssFile)">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SWGFSLBHB6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SWGFSLBHB6');
+    </script>
     <meta charset="UTF-8">
     <title th:text="${title}"></title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/__${cssFile}__.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/css/__${cssFile}__.css}" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </head>
 </div>

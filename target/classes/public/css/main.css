@@ -1,77 +1,30 @@
-/* General Styles */
 body {
-    background-color: #f5f5f5;
-    font-family: 'Courier New', Courier, monospace;
-    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Courier New', Courier, monospace;
-    color: #6c63ff;
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
 }
 
-a {
-    color: #6c63ff;
-    text-decoration: none;
+section {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-/* Navbar Styles */
-.navbar {
-    background-color: #6c63ff;
-    padding: 10px;
-}
-
-.navbar-brand {
-    font-weight: bold;
-    font-size: 24px;
-    color: #fff;
-}
-
-.navbar-nav .nav-link {
-    font-size: 18px;
-    margin-right: 10px;
-    color: #fff;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #eee;
-}
-
-/* Button Styles */
-.btn {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #6c63ff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #524ad2;
-}
-
-/* Example Styles */
-.example-section {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.example-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.example-description {
-    color: #777;
-    margin-bottom: 20px;
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
 }
 
 .example-link {
@@ -83,3 +36,39 @@ a:hover {
     font-size: 16px;
 }
 
+/* Navbar background color */
+.navbar {
+    background-color: #333; /* Dark grey background color */
+}
+
+/* Navbar brand text color */
+.navbar-brand {
+    color: #fff; /* White text color */
+}
+
+/* Navbar toggler icon color */
+.navbar-toggler-icon {
+    background-color: #fff; /* White icon color */
+}
+
+/* Navbar links text color */
+.navbar-nav .nav-link {
+    color: #fff; /* White text color */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-nav .nav-item {
+    border: 1px solid #555; /* Border color for each item */
+    border-radius: 5px; /* Border radius for rounded corners */
+    margin-right: 5px; /* Adjust the spacing between items */
+}
+/* Active link color */
+.navbar-nav .nav-item.active .nav-link {
+    color: #ffcc00; /* Yellow color for active link */
+}

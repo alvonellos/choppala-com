@@ -35,7 +35,7 @@ pipeline {
             steps {
                 echo 'Pushing Docker image to Docker Hub...'
                 script {
-                    docker.withRegistry('https://registry-1.docker.io', '65fbcb2c-d252-4e31-bacc-8e63f06f3d87') {
+                    docker.withRegistry('https://registry-1.docker.io', 'dockerhub') {
                         // Use the ID of the Jenkins credentials that store Docker Hub username and password
                         def dockerImage = docker.image("${dockerImageName}:${env.BUILD_NUMBER}")
                         dockerImage.push()
@@ -58,6 +58,14 @@ pipeline {
             }
         }
 
+        stage('Delete Old Namespace') {
+            steps {
+                script {
+                    sh "kubectl delete namespace ${kubernetesNamespace} --ignore-not-found=true"
+                }
+            }
+        }
+
        stage('Create New Namespace') {
             steps {
                 script {
@@ -69,18 +77,17 @@ pipeline {
         stage('Copy vault secret') {
             steps {
                 script {
-                    sh "kubectl get secret vault --namespace=default -o yaml | grep -v '^\\s*namespace:\\s' | kubectl replace --force --namespace=${kubernetesNamespace} -f -"
+                    sh "kubectl get secret vault --namespace=default -oyaml | grep -v '^\\s*namespace:\\s' | kubectl apply --namespace=${kubernetesNamespace} -f -"
                 }
             }
         }
-
 
         stage('Deploy to Kubernetes') {
             steps {
                 script {
                     sh "export BUILD_NUMBER=${env.BUILD_NUMBER}"
-                    sh "cat kubernetes/deployment.yaml | envsubst | kubectl apply -f - -n choppala-www"
-                    sh "kubectl apply -f kubernetes/service.yaml -n choppala-www"
+                    sh "cat kubernetes/deployment.yaml | envsubst | kubectl apply -f - -n ${kubernetesNamespace}"
+                    sh "kubectl apply -f kubernetes/service.yaml -n ${kubernetesNamespace}"
                 }
             }
         }
