@@ -1,11 +1,4 @@
 
-C
-jenkins/Jenkinsfile,3\9\393cdc10c9ba0005483b9cf183050528c742cda8
-:
-
-Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
-J
-kubernetes/deployment.yaml,0\d\0dc35d2f42aeeb53d196abccc5a7909fe4f0aa22
 w
 G.idea/sonarlint/issuestore/f/2/f2d409e670ec76019b6c69499222de8a4c6e1071,c\f\cf4264da89283c0991fdb1c55b454b135364ec9e
 Å
@@ -162,20 +155,12 @@ w
 G.idea/sonarlint/issuestore/4/8/489deb293a1e5c73e0e3617661df5cc579936bb1,3\8\38536e002b76421a4b89268df0d31c8360d4e382
 w
 G.idea/sonarlint/issuestore/5/e/5e4805de49b3e0799af661639276d994cb0e08ae,0\b\0bafecc5350071d269191d61db01cc3f5cbcc007
-\
-,src/main/java/com/choppala/website/Main.java,6\5\6527391869e8458a7327ed1151108ea9858d3bef
 8
 Procfile,b\c\bc3c68e880d1a01632bce79f69dd1387c7ba9c54
 A
 system.properties,a\5\a5db35984da8ffa0e255c16a2e31ae7b26e7d222
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-]
--.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 Å
 Q.idea/sonarlint/securityhotspotstore/8/4/84e95bd0ea795e5307464eb72e7bd95d9f673c00,7\0\7001e9040f42053505132028f11138cca58cb535
 Å

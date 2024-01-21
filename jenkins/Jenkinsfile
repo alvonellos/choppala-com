@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        dockerImageName = 'alvonellos/choppala-www-ng'
+        dockerImageName = 'alvonellos/choppala-www'
         // Define your Docker image name
-        kubernetesNamespace = 'choppala-www-ng' // Update with your Kubernetes namespace
+        kubernetesNamespace = 'choppala-www' // Update with your Kubernetes namespace
         kubeconfig = credentials('cluster') // Use the ID of the Kubernetes credential
     }
 
@@ -26,9 +26,6 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 script {
-                    echo 'building artifact'
-                    sh 'mvn package'
-                    echo 'building docker image'
                     def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}")
                 }
             }
@@ -61,10 +58,19 @@ pipeline {
             }
         }
 
+
+       stage('Create New Namespace') {
+            steps {
+                script {
+                    sh "kubectl create namespace ${kubernetesNamespace} --dry-run=client -o yaml | kubectl apply -f -"
+                }
+            }
+        }
+
         stage('Copy vault secret') {
             steps {
                 script {
-                    sh "kubectl get secret vault --namespace=default -oyaml | grep -v '^\\s*namespace:\\s' | kubectl apply --namespace=${kubernetesNamespace} -f -"
+                    sh "kubectl get secret vault --namespace=default -oyaml | grep -v '^\\s*namespace:\\s' | kubectl replace --force --namespace=${kubernetesNamespace} -f -"
                 }
             }
         }
