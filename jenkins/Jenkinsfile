@@ -24,6 +24,9 @@ pipeline {
 
         stage('Build image') {
             steps {
+                echo 'packaging...'
+                sh 'mvn -B -DskipTests clean install -U'
+
                 echo 'Building Docker image...'
                 script {
                     def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}")
