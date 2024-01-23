@@ -104,44 +104,6 @@
     <build>
         <plugins>
             <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>${maven-clean-plugin.version}</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>src/main/resources/static</directory>
-                            <includes>
-                                <include>*.js</include>
-                                <include>*.txt</include>
-                                <include>*.html</include>
-                                <include>*.css</include>
-                                <include>*.map</include>
-                                <include>*.json</include>
-                                <include>*.ico</include>
-                                <followSymlinks>false</followSymlinks>
-                            </includes>
-                        </fileset>
-                        <fileset>
-                            <directory>src/main/resources/static</directory>
-                            <includes>
-                                <include>**</include>
-                                <followSymlinks>false</followSymlinks>
-                            </includes>
-                        </fileset>
-                    </filesets>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>auto-clean</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
