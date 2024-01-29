@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { StartUpComponent } from './start-up/start-up.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StartUpComponent } from './start-up/start-up.component';
     AboutComponent,
     ContactComponent,
     AlbumsComponent,
-    StartUpComponent
+    StartUpComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
