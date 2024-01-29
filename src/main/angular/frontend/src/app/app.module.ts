@@ -9,6 +9,10 @@ import { ServicesComponent } from './services/services.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AlbumsComponent } from './albums/albums.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { StartUpComponent } from './start-up/start-up.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,14 @@ import { AlbumsComponent } from './albums/albums.component';
     ServicesComponent,
     AboutComponent,
     ContactComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    StartUpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,27 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router, Event } from '@angular/router';
+import { takeWhile, tap, timer } from 'rxjs';
+import { StartUpComponent } from './start-up/start-up.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  public overall_opacity = 0;
+
+  constructor(private _dialog: MatDialog) { }
+
+  ngOnInit(): void {
+    this._dialog.open(StartUpComponent);
+    timer(1000, 20)
+      .pipe(takeWhile(() => this.overall_opacity < 100), tap(() => this.overall_opacity++))
+      .subscribe(() => {
+      });
+  }
 
   @ViewChild('home') home!: ElementRef;
   @ViewChild('portfolio') portfolio!: ElementRef;

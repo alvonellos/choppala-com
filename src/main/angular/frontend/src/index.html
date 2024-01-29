@@ -7,31 +7,30 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    .loader {
-      border-radius: 50%;
-      width: 120px;
-      height: 120px;
-      animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
     .vertically-center-on-screen {
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
+    .pre____loader {
+      width: 80px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 8px solid;
+      border-color: #000 #0000;
+      animation: l1 1s infinite;
+    }
+
+    @keyframes l1 {
+      to {
+        transform: rotate(.5turn)
+      }
+    }
   </style>
-  <link rel="stylesheet" type="text/css"
-    href="https://fonts.googleapis.com/css?family=Cinzel:400,700%7CRaleway:500,500i,600,700%7CMaterial+Icons&amp;display=swap" />
+  <!-- <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Cinzel:400,700%7CRaleway:500,500i,600,700%7CMaterial+Icons&amp;display=swap" /> -->
   <link rel="stylesheet" type="text/css" href="assets/css/vendor.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
   <link rel="apple-touch-icon" sizes="57x57" href="assets/content/apple-icon-57x57.png" />
@@ -52,19 +51,19 @@
   <meta name="msapplication-TileImage" content="assets/content/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/x-icon" href="assets/content/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
   <app-root>
     <div class="vertically-center-on-screen">
-      <div class="loader">
-        <img src="./assets/img/logo-c-dark.png">
-      </div>
+      <div class="pre____loader"></div>
     </div>
   </app-root>
 
   <script id="list-hover-vs" type="x-shader/x-vertex">
-    
+
     varying vec2 vUv;
     
     vec3 deformationCurve(vec3 position, vec2 uv, vec2 offset) {
