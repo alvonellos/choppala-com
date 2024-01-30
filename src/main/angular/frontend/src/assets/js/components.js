@@ -4793,6 +4793,7 @@
             this.$overlayWidgets = this.$header.find('.header__wrapper-overlay-widgets');
             this.$allLinksOverlay = this.$header.find('.menu-overlay a');
             this.$allLinksClassic = this.$header.find('.menu a');
+            this.$getInTouch = this.$header.find('.get__in__touch');
 
             // Menu
             this.$menuOverlay = this.$overlay.find('.js-menu-overlay');
@@ -5094,6 +5095,14 @@
 
             if (this.$submenuOpeners.length) {
                 this.$submenuOpeners.off('click').on('click', (e) => {
+                    e.preventDefault();
+                    this.closeMenu();
+                    this.$burger.removeClass(this.burgerOpenClass);
+                });
+            }
+
+            if (this.$getInTouch.length) {
+                this.$getInTouch.off('click').on('click', (e) => {
                     e.preventDefault();
                     this.closeMenu();
                     this.$burger.removeClass(this.burgerOpenClass);

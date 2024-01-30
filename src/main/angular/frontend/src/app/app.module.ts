@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { StartUpComponent } from './start-up/start-up.component';
 import { HeaderComponent } from './header/header.component';
+import { InstagramComponent } from './instagram/instagram.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { HeaderComponent } from './header/header.component';
     ContactComponent,
     AlbumsComponent,
     StartUpComponent,
-    HeaderComponent
+    HeaderComponent,
+    InstagramComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
