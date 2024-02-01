@@ -14,8 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { StartUpComponent } from './start-up/start-up.component';
 import { HeaderComponent } from './header/header.component';
-import { InstagramComponent } from './instagram/instagram.component';
+import { SkillsComponent } from './skills/skills.component';
 import { FooterComponent } from './footer/footer.component';
+import { ViewProjectComponent } from './portfolio/view-project/view-project.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,9 @@ import { FooterComponent } from './footer/footer.component';
     AlbumsComponent,
     StartUpComponent,
     HeaderComponent,
-    InstagramComponent,
-    FooterComponent
+    SkillsComponent,
+    FooterComponent,
+    ViewProjectComponent
   ],
   imports: [
     BrowserModule,

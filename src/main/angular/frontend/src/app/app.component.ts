@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
   @ViewChild('services') services!: ElementRef;
   @ViewChild('about') about!: ElementRef;
   @ViewChild('contact') contact!: ElementRef;
+  @ViewChild('skills') skills!: ElementRef;
 
   public on_scroll(link: string) {
     if (link === 'home') {
@@ -38,6 +39,8 @@ export class AppComponent implements OnInit {
       this.services.nativeElement.scrollIntoView({ behaviour: 'smooth' });
     } else if (link === 'about') {
       this.about.nativeElement.scrollIntoView({ behaviour: 'smooth' });
+    } else if (link === 'skills') {
+      this.skills.nativeElement.scrollIntoView({ behaviour: 'smooth' });
     } else {
       this.contact.nativeElement.scrollIntoView({ behaviour: 'smooth' });
     }

@@ -1,0 +1,94 @@
+<div data-barba="wrapper">
+    <div class="js-smooth-scroll bg-light-1" id="page-wrapper" data-barba="container">
+        <main class="page-wrapper__content">
+            <section class="section pt-3 pb-2 header--visible section-masthead pt-large pb-small"
+                data-arts-os-animation="data-arts-os-animation" data-background-color="var(--color-light-1)">
+                <div class="section-masthead__inner container">
+                    <header class="row section-masthead__header justify-content-center">
+                        <div class="col">
+                            <div class="section-masthead__meta small-caps mt-0 mb-2">
+                                <div class="section-masthead__meta-item split-text js-split-text"
+                                    data-split-text-type="lines" data-split-text-set="lines"><a>
+                                        {{ _data.date }}
+                                    </a>
+                                </div>
+                                <div class="section-masthead__meta-item">
+                                    <ul class="section-masthead__meta-categories split-text js-split-text"
+                                        data-split-text-type="lines" data-split-text-set="lines">
+                                        <li>
+                                            <a>
+                                                {{ _data.place }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="section-masthead__heading split-text js-split-text"
+                                data-split-text-type="lines,words" data-split-text-set="words">
+                                <h1 class="h2 mt-0 mb-0">
+                                    {{ _data.role }}
+                                </h1>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="section__headline mt-1 mt-md-2 mr-auto"></div>
+                        </div>
+                    </header>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+<mat-dialog-content class="p-0">
+    <div data-barba="wrapper">
+        <div class="js-smooth-scroll bg-light-1" id="page-wrapper" data-barba="container">
+            <main class="page-wrapper__content">
+                <section class="section section-blog pb-medium">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 section-blog__post">
+                                <article class="post">
+                                    <div class="post__content clearfix">
+                                        <p class="has-drop-cap">
+                                            {{ _data.description }}
+                                        </p>
+                                        <h3>Responsibilities</h3>
+                                        <div>
+                                            <ul>
+                                                <li *ngFor="let r of responsibilities">
+                                                    {{ r }}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <blockquote>
+                                            <cite>Hemanth Choppala</cite>
+                                        </blockquote>
+                                    </div>
+                                    <div class="post__tags mt-small">
+                                        <div class="tagcloud">
+                                            <ul>
+                                                <li *ngFor="let e of envs">
+                                                    <a class="tag-cloud-link env__color">
+                                                        {{ e }}
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <div class="section-content__button" style="opacity: 1; visibility: inherit; transform: translate(0px, 0px);">
+        <a mat-dialog-close class="button button_bordered button_white btn__color" data-hover="Close">
+            <span class="button__label-hover">Close</span>
+        </a>
+    </div>
+</mat-dialog-actions>
