@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewProjectComponent } from './view-project/view-project.component';
 import { Project } from '../utilities/models/project.c';
+import { ResponsiveService } from '../utilities/services/responsive.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,18 +11,26 @@ import { Project } from '../utilities/models/project.c';
 })
 export class PortfolioComponent {
 
-  constructor(private _dialog: MatDialog) { }
+  public screen_size = '';
+
+  constructor(private _dialog: MatDialog,
+    private _responsive_service: ResponsiveService) {
+    this.screen_size = _responsive_service.current_screen_size;
+    _responsive_service.currentScreenSize.subscribe((r) => {
+      this.screen_size = r;
+    });
+  }
 
   public projects: Project[] = [
     {
-      img: '',
+      img: '../../assets/img/project-1.jpg',
       role: 'Senior Software Engineer',
       date: 'Feb 22 – Till date',
       place: 'Paysafe Group -Atlanta, Georgia',
       description: `Full stack microservices payments application catering to the sports gaming industry, enabling 
-secure transaction processing for xxxx people around the world to purchase online in their own 
-currency using a variety of global payment methods; all while providing a secure world-class 
-online experience`,
+        secure transaction processing for xxxx people around the world to purchase online in their own 
+        currency using a variety of global payment methods; all while providing a secure world-class 
+        online experience`,
       responsibilities: `Responsible for creating efficient design and developing User Interaction screens using HTML5, 
         CSS, JavaScript, jQuery, Bootstrap, Node, Angular, Angular JS. 
         Used various Core Java concepts such as Multi-Threading, Exception Handling, Collection APIs 
@@ -64,7 +73,7 @@ online experience`,
         Sourcetree, AWS, spinnaker, Oracle.`
     },
     {
-      img: '',
+      img: '../../assets/img/project-2.jpg',
       role: 'Fidelity Investments – Senior Software Engineer',
       date: 'July 21 – Feb 22',
       place: 'Accenture -Atlanta, Georgia',
@@ -118,7 +127,7 @@ online experience`,
       BitBucket, Sourcetree, openshift, PAAS platform, Oracle`,
     },
     {
-      img: '',
+      img: '../../assets/img/project-three.jpg',
       place: 'Delta Airlines -Atlanta, Georgia',
       role: 'API Developer-Niche',
       date: 'April 18 – July 21',
@@ -173,7 +182,7 @@ online experience`,
       XSLT, XML, JSON, Servlets, Gitlab, IBM websphere, openshift, PAAS platform`
     },
     {
-      img: '',
+      img: '../../assets/img/project-four.jpg',
       place: 'Anira Solutions',
       date: 'June 17 – Mar 18',
       role: 'Developer',
@@ -202,7 +211,7 @@ online experience`,
       JDBC, Git`
     },
     {
-      img: '',
+      img: '../../assets/img/project-four.jpg',
       date: 'Jan 17 – May 17',
       description: '',
       place: 'Tek Riders, Inc',
@@ -236,6 +245,12 @@ online experience`,
     this._dialog.open(ViewProjectComponent, {
       data: p,
       panelClass: 'p-0',
+      minWidth: this.screen_size === 'XSmall' ? '90vw' :
+        this.screen_size === 'Small' ? '90vw' :
+          this.screen_size === 'Medium' ? '80vw' :
+            this.screen_size === 'Large' ? '60vw' :
+              this.screen_size === 'XLarge' ? '50vw' :
+                '90vw',
     });
   }
 
