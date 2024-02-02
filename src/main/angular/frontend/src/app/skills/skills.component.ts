@@ -47,43 +47,80 @@ export class SkillsComponent implements OnInit {
           '../../assets/img/rational-rose.jpg',
           '../../assets/img/web-storm.jpg',
           '../../assets/img/drupal.jpg',
+          '../../assets/img/joomla.jpg',
+          '../../assets/img/sublime.jpg',
         ],
       },
       {
         img: '../../assets/img/databases.jpg',
         name: 'Databases',
         details: '',
-        images: [],
+        images: [
+          '../../assets/img/oracle.jpg',
+          '../../assets/img/sql-server.jpg',
+          '../../assets/img/my-sql.jpg',
+        ],
       },
       {
         img: '../../assets/img/operating-systems.jpg',
         name: 'Operating Systems',
         details: '',
-        images: [],
+        images: [
+          '../../assets/img/window-xp.jpg',
+          '../../assets/img/mac.jpg',
+          '../../assets/img/ios.jpg',
+          '../../assets/img/windows.jpg',
+          '../../assets/img/unix.jpg',
+          '../../assets/img/solaris.jpg',
+          '../../assets/img/linux.jpg',
+        ],
       },
       {
         img: '../../assets/img/web-technologies.jpg',
         name: 'Web Technologies',
         details: '',
-        images: [],
+        images: [
+          '../../assets/img/html.jpg',
+          '../../assets/img/css.jpg',
+          '../../assets/img/javascript.jpg',
+          '../../assets/img/bootstrap.jpg',
+          '../../assets/img/php.jpg',
+        ],
       },
       {
         img: '../../assets/img/debugging-tools.jpg',
         name: 'Debugging Tools',
         details: '',
-        images: [],
+        images: [
+          '../../assets/img/bugzilla.jpg',
+          '../../assets/img/firebug.jpg',
+          '../../assets/img/fidler.jpg',
+          '../../assets/img/selenium.jpg',
+          '../../assets/img/grunt.jpg',
+          '../../assets/img/wireshark.jpg',
+        ],
       },
       {
         img: '../../assets/img/applications.jpg',
         name: 'Application/Web Servers',
         details: '',
-        images: []
+        images: [
+          '../../assets/img/apache.jpg',
+          '../../assets/img/jboss.jpg',
+          '../../assets/img/weblogic.jpg',
+        ]
       },
       {
         img: '../../assets/img/web-services.jpg',
         name: 'Web Services',
         details: '',
-        images: []
+        images: [
+          '../../assets/img/soap.jpg',
+          '../../assets/img/wsdl.jpg',
+          '../../assets/img/json.jpg',
+          '../../assets/img/rest.jpg',
+          '../../assets/img/soa.jpg',
+        ]
       }
     ];
 
