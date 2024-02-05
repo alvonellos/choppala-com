@@ -117,9 +117,9 @@
                             <div class="col-lg-4 order-lg-3">
                                 <div class="h-100 d-flex flex-column justify-content-center py-3 container-fluid">
                                     <section class="section section-form">
-                                        <form class="form form-contact js-ajax-form"
+                                        <form #contactForm="ngForm" (ngSubmit)="on_submit(contactForm)" class="form form-contact js-ajax-form"
                                             data-message-success="Thanks for your message! We will reply you as soon as possible."
-                                            data-message-error="Something went wrong :( Please contact me directly at &lt;a href=&quot;rhye@example.com&quot;&gt;rhye@example.com&lt;/a&gt;">
+                                            data-message-error="Something went wrong">
                                             <div class="row form__row">
                                                 <div class="col form__col">
                                                     <h3 class="h3 mt-0 mb-0">Send Message</h3>
@@ -128,22 +128,33 @@
                                             <div class="row form__row">
                                                 <div class="col form__col">
                                                     <label class="input-float js-input-float">
-                                                        <input class="input-float__input" type="text"
-                                                            name="visitor_name" required="required"
-                                                            data-msg="Please enter your name" /><span
-                                                            class="input-float__label">Your Name</span><span
-                                                            class="form__error"></span>
+                                                        <input class="input-float__input" type="text" name="name"
+                                                            required="required" data-msg="Please enter your name"
+                                                            [(ngModel)]="contact.name" />
+                                                        <span class="input-float__label">Your Name</span>
+                                                        <span class="form__error"></span>
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="row form__row">
                                                 <div class="col form__col">
                                                     <label class="input-float js-input-float">
-                                                        <input class="input-float__input" type="email"
-                                                            name="visitor_email" required="required"
-                                                            data-msg="Please enter a correct e-mail" /><span
-                                                            class="input-float__label">Your E-mail</span><span
-                                                            class="form__error"></span>
+                                                        <input class="input-float__input" type="email" name="email"
+                                                            required="required" data-msg="Please enter a correct e-mail"
+                                                            [(ngModel)]="contact.email" />
+                                                        <span class="input-float__label">Your E-mail</span>
+                                                        <span class="form__error"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row form__row">
+                                                <div class="col form__col">
+                                                    <label class="input-float js-input-float">
+                                                        <input class="input-float__input" type="text" name="phone"
+                                                            required="required" data-msg="Please enter a correct phone"
+                                                            [(ngModel)]="contact.phone" />
+                                                        <span class="input-float__label">Your Phone</span>
+                                                        <span class="form__error"></span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -151,9 +162,11 @@
                                                 <div class="col form__col">
                                                     <label class="input-float js-input-float">
                                                         <textarea class="input-float__input input-float__input_textarea"
-                                                            name="visitor_msg"></textarea><span
-                                                            class="input-float__label">Your Message</span><span
-                                                            class="form__error"></span>
+                                                            name="message" [(ngModel)]="contact.message"
+                                                            data-msg="Please enter message"
+                                                            required="required"></textarea>
+                                                        <span class="input-float__label">Your Message</span>
+                                                        <span class="form__error"></span>
                                                     </label>
                                                 </div>
                                             </div>

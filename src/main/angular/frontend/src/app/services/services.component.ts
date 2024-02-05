@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-services',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ServicesComponent {
 
+  @Output() link: EventEmitter<any> = new EventEmitter<any>();
+
+  public on_click(eve: string) {
+    this.link.emit(eve);
+  }
 }

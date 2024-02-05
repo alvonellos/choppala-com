@@ -4466,7 +4466,10 @@
           <div class="modal" id="modalContactForm">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content radius-img">
-                <div class="modal__close" data-dismiss="modal"><img src="./img/general/icon-close.svg"/></div>
+                <div class="modal__close" data-dismiss="modal">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
+<path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+</svg></div>
                   <header class="text-center mb-1">
                     <img src="${icon}" width="80" alt=""/>
                     <p class="modal__message h4"><strong>${message}</strong></p>
