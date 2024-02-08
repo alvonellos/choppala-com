@@ -33,7 +33,7 @@ export class StartUpComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.is_show = true;
     setTimeout(() => {
-      timer(1000, 8)
+      timer(1000, 5)
         .pipe(takeWhile(() => this.loader < 100), tap(() => this.loader++))
         .subscribe(() => {
           if (this.loader >= 100) {

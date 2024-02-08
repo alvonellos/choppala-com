@@ -12,7 +12,7 @@ import { ResponsiveService } from '../utilities/services/responsive.service';
 export class ServicesComponent {
 
   @Output() link: EventEmitter<any> = new EventEmitter<any>();
-  public characters = 200;
+  public characters = 180;
   public screen_size = '';
 
   public services: Service[] = [

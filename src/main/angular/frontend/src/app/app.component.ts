@@ -11,16 +11,16 @@ import { StartUpComponent } from './start-up/start-up.component';
 })
 export class AppComponent implements OnInit {
 
-  public overall_opacity = 0;
+  public overall_opacity = 100;
 
   constructor(private _dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this._dialog.open(StartUpComponent);
-    timer(1000, 20)
-      .pipe(takeWhile(() => this.overall_opacity < 100), tap(() => this.overall_opacity++))
-      .subscribe(() => {
-      });
+    // this._dialog.open(StartUpComponent);
+    // timer(1000, 20)
+    //   .pipe(takeWhile(() => this.overall_opacity < 100), tap(() => this.overall_opacity++))
+    //   .subscribe(() => {
+    //   });
   }
 
   @ViewChild('home') home!: ElementRef;
