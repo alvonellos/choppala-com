@@ -19,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import { SkillsComponent } from './skills/skills.component';
 import { FooterComponent } from './footer/footer.component';
 import { ViewProjectComponent } from './portfolio/view-project/view-project.component';
+import { ViewServiceComponent } from './services/view-service/view-service.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ViewProjectComponent } from './portfolio/view-project/view-project.comp
     HeaderComponent,
     SkillsComponent,
     FooterComponent,
-    ViewProjectComponent
+    ViewProjectComponent,
+    ViewServiceComponent
   ],
   imports: [
     BrowserModule,

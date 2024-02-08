@@ -84,9 +84,9 @@
             <div class="cursor__icon material-icons"></div>
         </div>
     </div>
-    
+
     <app-header (link)="on_click($event)"></app-header>
-    
+
     <div class="js-smooth-scroll bg-dark-1" id="page-wrapper" data-barba="container">
         <main class="page-wrapper__content">
             <section class="section section-masthead d-none" data-background-color="var(--color-dark-1)"></section>
@@ -97,21 +97,11 @@
                         <div
                             class="slider-fullscreen-projects__content swiper-container pointer-events-none js-slider-fullscreen-projects__content">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                                <div *ngFor="let s of slide_titles" class="swiper-slide">
                                     <h2 class="h1 slider__heading js-split-text"
-                                        data-split-text-type="lines, words, chars">Cassio Apartment</h2>
-                                </div>
-                                <div class="swiper-slide">
-                                    <h2 class="h1 slider__heading js-split-text"
-                                        data-split-text-type="lines, words, chars">Nothern Wave</h2>
-                                </div>
-                                <div class="swiper-slide">
-                                    <h2 class="h1 slider__heading js-split-text"
-                                        data-split-text-type="lines, words, chars">Paysage Fiction</h2>
-                                </div>
-                                <div class="swiper-slide">
-                                    <h2 class="h1 slider__heading js-split-text"
-                                        data-split-text-type="lines, words, chars">Silence &amp; Noise</h2>
+                                        data-split-text-type="lines, words, chars">
+                                        {{ s }}
+                                    </h2>
                                 </div>
                             </div>
                         </div>
@@ -150,27 +140,33 @@
                             class="slider-fullscreen-projects__footer swiper-container js-slider-fullscreen-projects__footer">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <div class="slider__wrapper-button-footer"><a
-                                            class="button button_white button_bordered" data-hover="Explore Project"
-                                            (click)="on_click('portfolio')" data-pjax-link="fullscreenSlider"><span
-                                                class="button__label-hover">Explore
-                                                Project</span></a>
+                                    <div class="slider__wrapper-button-footer">
+                                        <a class="button button_white button_bordered" data-hover="Explore Project"
+                                            (click)="on_click('portfolio')" data-pjax-link="fullscreenSlider">
+                                            <span class="button__label-hover">
+                                                Explore Project
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="slider__wrapper-button-footer"><a
-                                            class="button button_white button_bordered" data-hover="Explore Project"
-                                            (click)="on_click('portfolio')" data-pjax-link="fullscreenSlider"><span
-                                                class="button__label-hover">Explore
-                                                Project</span></a>
+                                    <div class="slider__wrapper-button-footer">
+                                        <a class="button button_white button_bordered" data-hover="Explore Project"
+                                            (click)="on_click('portfolio')" data-pjax-link="fullscreenSlider">
+                                            <span class="button__label-hover">
+                                                Explore Project
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
-                                    <div class="slider__wrapper-button-footer"><a
-                                            class="button button_white button_bordered" data-hover="Explore Project"
-                                            (click)="on_click('portfolio')" data-pjax-link="fullscreenSlider"><span
-                                                class="button__label-hover">Explore
-                                                Project</span></a>
+                                    <div class="slider__wrapper-button-footer">
+                                        <a class="button button_white button_bordered" data-hover="Explore Project"
+                                            (click)="on_click('portfolio')" data-pjax-link="fullscreenSlider">
+                                            <span class="button__label-hover">
+                                                Explore Project
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -8,6 +8,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class HomeComponent {
 
   @Output() link: EventEmitter<any> = new EventEmitter<any>();
+  public slide_titles: string[] = [
+    'Developer',
+    'Designer',
+    'Engineer'
+  ]
 
   public on_click(eve: string) {
     this.link.emit(eve);
