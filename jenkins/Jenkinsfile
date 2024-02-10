@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        dockerImageName = 'alvonellos/choppala-www-ng'
+        dockerImageName = 'alvonellos/choppala-www'
         // Define your Docker image name
-        kubernetesNamespace = 'choppala-www-ng' // Update with your Kubernetes namespace
+        kubernetesNamespace = 'choppala-www' // Update with your Kubernetes namespace
         kubeconfig = credentials('cluster') // Use the ID of the Kubernetes credential
     }
 
