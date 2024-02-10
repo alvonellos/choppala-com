@@ -1,0 +1,228 @@
+<div data-barba="wrapper">
+    <div class="js-smooth-scroll bg-light-1" id="page-wrapper" data-barba="container">
+        <main class="page-wrapper__content">
+
+            <div class="js-smooth-scroll bg-light-1" id="page-wrapper" data-barba="container">
+                <main class="page-wrapper__content">
+                    <section class="section section-masthead pt-large pb-medium text-center"
+                        data-arts-os-animation="data-arts-os-animation" data-background-color="var(--color-light-1)">
+                        <div class="section-masthead__inner container-fluid">
+                            <header class="row section-masthead__header justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="section-masthead__heading split-text js-split-text"
+                                        data-split-text-type="lines,words" data-split-text-set="words">
+                                        <h1 class="mt-0 mb-0 h1">Services</h1>
+                                    </div>
+                                    <div class="w-100"></div>
+                                    <div class="section__headline mt-2 mx-auto"></div>
+                                </div>
+                            </header>
+                        </div>
+                    </section>
+                    <section class="section section-services section-slider-images mb-5 pb-5">
+                        <div class="slider slider-services slider-images js-slider-images">
+                            <div class="swiper-container js-slider-images__slider" data-slides-per-view="1.4"
+                                data-slides-per-view-tablet="1.2" data-slides-per-view-mobile="1.1"
+                                data-centered-slides="true" data-autoplay-enabled="true" data-drag-mouse="true"
+                                data-drag-cursor="true" data-drag-class="slider-images_touched" data-auto-height="true">
+                                <div class="swiper-wrapper">
+                                    <div *ngFor="let s of services" class="swiper-slide">
+                                        <div class="container figure-service bg-white">
+                                            <div class="row no-gutters">
+                                                <div class="col-lg-5 overflow">
+                                                    <div class="w-100 h-100" data-swiper-parallax-zoom="20%"
+                                                        data-swiper-parallax="20%">
+                                                        <div class="slider__zoom-container w-100 h-100">
+                                                            <div class="figure-service__wrapper-bg">
+                                                                <div class="slider__bg swiper-lazy"
+                                                                    attr.data-background="{{ s.img }}">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="figure-service__content p-small">
+                                                        <div class="figure-service__header">
+                                                            <div class="figure-service__heading">
+                                                                <h3 class="h3 mt-0 mb-0">
+                                                                    {{ s.name }}
+                                                                </h3>
+                                                            </div>
+                                                            <div class="figure-service__text">
+                                                                <p class="mb-0 mt-1">
+                                                                    {{ truncate_string(s.details) + (s.details.length >
+                                                                    characters ? '&hellip;' : '') }}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="figure-service__footer d-flex justify-content-between align-items-center mt-xsmall mt-md-6">
+                                                            <div class="figure-service__price">
+                                                                <div class="figure-service__header small-caps mb-0-5">
+                                                                    Read More
+                                                                </div>
+                                                                <div class="figure-service__amount h3"></div>
+                                                            </div>
+                                                            <div class="figure-service__wrapper-button">
+                                                                <a class="d-inline-block no-highlight" (click)="view_service(s)">
+                                                                    <div class="arrow arrow-right js-arrow"
+                                                                        data-arts-cursor="data-arts-cursor"
+                                                                        data-arts-cursor-hide-native="true"
+                                                                        data-arts-cursor-scale="0"
+                                                                        data-arts-cursor-magnetic="data-arts-cursor-magnetic">
+                                                                        <svg class="svg-circle" viewBox="0 0 60 60"
+                                                                            version="1.1"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                                            <circle class="circle" cx="30" cy="30"
+                                                                                r="29" fill="none"></circle>
+                                                                        </svg>
+                                                                        <div
+                                                                            class="arrow__pointer arrow-right__pointer">
+                                                                        </div>
+                                                                        <div class="arrow__triangle"></div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container slider-services__footer mt-1 mt-md-2">
+                                <div class="row justify-content-between align-items-center">
+                                    <div class="col-auto">
+                                        <div class="slider__counter slider__counter_mini">
+                                            <div class="js-slider__counter-current swiper-container">
+                                                <div class="swiper-wrapper"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="slider__dots js-slider__dots">
+                                            <div class="slider__dot slider__dot_active">
+                                                <svg class="svg-circle" viewBox="0 0 60 60" version="1.1"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+                                                </svg>
+                                            </div>
+                                            <div class="slider__dot">
+                                                <svg class="svg-circle" viewBox="0 0 60 60" version="1.1"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+                                                </svg>
+                                            </div>
+                                            <div class="slider__dot">
+                                                <svg class="svg-circle" viewBox="0 0 60 60" version="1.1"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+                                                </svg>
+                                            </div>
+                                            <div class="slider__dot">
+                                                <svg class="svg-circle" viewBox="0 0 60 60" version="1.1"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="slider__total slider__total_mini js-slider__counter-total">I</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section section-cta section-content pt-medium pb-medium pt-md-4 pb-md-4 bg-dark-3"
+                        data-arts-os-animation="data-arts-os-animation" data-arts-theme-text="light">
+                        <div class="container">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-lg-8">
+                                    <div class="section-cta__heading split-text js-split-text"
+                                        data-split-text-type="lines,words" data-split-text-set="words">
+                                        <h2 class="h3 mt-0 mt-md-1 mb-1">Want to Work with Me?</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-auto">
+                                    <div class="section-content__button"><a class="button button_bordered button_white"
+                                            data-hover="Get in Touch" (click)="on_click('contact')">
+                                            <span class="button__label-hover">
+                                                Get in Touch
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </main>
+    </div>
+</div>
+<canvas id="js-webgl"></canvas>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" data-arts-theme-text="light">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item">
+                <div class="pswp__img pswp__img--placeholder"></div>
+            </div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)" data-arts-cursor="data-arts-cursor"
+                    data-arts-cursor-scale="1.2" data-arts-cursor-magnetic="data-arts-cursor-magnetic"
+                    data-arts-cursor-hide-native="true"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"
+                    data-arts-cursor="data-arts-cursor" data-arts-cursor-scale="1.2"
+                    data-arts-cursor-magnetic="data-arts-cursor-magnetic" data-arts-cursor-hide-native="true"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__button pswp__button--arrow--left">
+                <div class="arrow arrow-left js-arrow" data-arts-cursor="data-arts-cursor"
+                    data-arts-cursor-hide-native="true" data-arts-cursor-scale="0"
+                    data-arts-cursor-magnetic="data-arts-cursor-magnetic">
+                    <svg class="svg-circle" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+                    </svg>
+                    <div class="arrow__pointer arrow-left__pointer"></div>
+                    <div class="arrow__triangle"></div>
+                </div>
+            </div>
+            <div class="pswp__button pswp__button--arrow--right">
+                <div class="arrow arrow-right js-arrow" data-arts-cursor="data-arts-cursor"
+                    data-arts-cursor-hide-native="true" data-arts-cursor-scale="0"
+                    data-arts-cursor-magnetic="data-arts-cursor-magnetic">
+                    <svg class="svg-circle" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <circle class="circle" cx="30" cy="30" r="29" fill="none"></circle>
+                    </svg>
+                    <div class="arrow__pointer arrow-right__pointer"></div>
+                    <div class="arrow__triangle"></div>
+                </div>
+            </div>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center text-center"></div>
+            </div>
+        </div>
+    </div>
+</div>

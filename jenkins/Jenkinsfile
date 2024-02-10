@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        dockerImageName = 'alvonellos/choppala-www'
+        dockerImageName = 'alvonellos/choppala-www-ng'
         // Define your Docker image name
-        kubernetesNamespace = 'choppala-www' // Update with your Kubernetes namespace
+        kubernetesNamespace = 'choppala-www-ng' // Update with your Kubernetes namespace
         kubeconfig = credentials('cluster') // Use the ID of the Kubernetes credential
     }
 
@@ -24,6 +24,9 @@ pipeline {
 
         stage('Build image') {
             steps {
+                echo 'packaging...'
+                sh 'mvn -B -DskipTests clean install -U'
+
                 echo 'Building Docker image...'
                 script {
                     def dockerImage = docker.build("${dockerImageName}:${env.BUILD_NUMBER}")

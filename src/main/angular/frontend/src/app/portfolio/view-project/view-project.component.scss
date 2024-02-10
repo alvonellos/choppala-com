@@ -1,0 +1,41 @@
+.header--visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.mdc-dialog__content {
+    padding: 0px !important;
+}
+
+.mat-mdc-dialog-content {
+    max-height: 50vh !important;
+}
+
+.btn__color {
+    color: #eeece6 !important;
+}
+
+.env__color,
+li {
+    color: #333333 !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #eeece6;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

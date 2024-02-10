@@ -1,0 +1,20 @@
+<div [style.opacity]="overall_opacity">
+    <div #home>
+        <app-home (link)="on_scroll($event)"></app-home>
+    </div>
+    <div #portfolio>
+        <app-portfolio></app-portfolio>
+    </div>
+    <div #services>
+        <app-services (link)="on_scroll($event)"></app-services>
+    </div>
+    <div #skills>
+        <app-skills></app-skills>
+    </div>
+    <div #about>
+        <app-about></app-about>
+    </div>
+    <div #contact>
+        <app-contact></app-contact>
+    </div>
+</div>
