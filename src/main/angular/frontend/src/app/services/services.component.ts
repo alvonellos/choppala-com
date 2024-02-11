@@ -23,8 +23,7 @@ export class ServicesComponent {
         Microservices break down applications into independent, scalable services, offering 
         clients modular, maintainable, and agile solutions. With microservices, clients benefit 
         from faster development, easier scalability, and improved fault isolation, resulting in more 
-        efficient and resilient software systems.
-        `,
+        efficient and resilient software systems.`,
     },
     {
       img: '../../assets/img/api.jpg',
@@ -40,6 +39,20 @@ export class ServicesComponent {
       details: `As a software engineer, I specialize in developing web applications. 
         I create user-friendly, dynamic web apps tailored to clients' needs. With my expertise, 
         clients get responsive designs, robust functionality, and seamless user experiences.`
+    },
+    {
+      img: '../../assets/img/backend.jpg',
+      name: 'Back-end Development',
+      details: `Leveraging Java, .NET and other technologies to develop server-side logic 
+      and APIs that enable your app to run smoothly, scale effortlessly, and keep 
+      business-critical functions operating at peak efficiency.`
+    },
+    {
+      img: '../../assets/img/frontend.jpg',
+      name: 'Front-end Development',
+      details: `Crafting responsive client-side solutions with rich functionality that 
+      render blazingly fast across various screen sizes, with the help 
+      of cutting-edge technologies such as Angular, React, and more.`
     }
   ];
 
