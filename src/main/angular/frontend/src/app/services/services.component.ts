@@ -70,7 +70,7 @@ export class ServicesComponent {
         efficient APIs that enable seamless communication between different software systems.
          Clients benefit from secure, scalable interfaces that enhance system interoperability 
          and streamline processes.`,
-         description: `
+      description: `
          <h2>Services</h2>
         <h5>Custom API Development</h5>
         <p>Our team of seasoned software engineers specializes in developing custom APIs from scratch, 
@@ -116,7 +116,50 @@ export class ServicesComponent {
       details: `As a software engineer, I specialize in developing web applications. 
         I create user-friendly, dynamic web apps tailored to clients' needs. With my expertise, 
         clients get responsive designs, robust functionality, and seamless user experiences.`,
-        description: ``,
+      description: `
+        <h2>Services</h2>
+        <h5>Custom Website Development</h5>
+        <p> Our team of skilled developers leverages the latest technologies and best practices
+         to create tailor-made websites that reflect your brand
+        's identity, cater to your target audience, and align with your business goals.</p>
+        <h5>Responsive Web Design</h5>
+        <p>We prioritize user experience by designing websites that are fully responsive and
+         optimized for seamless viewing and interaction across all devices, ensuring a
+          consistent and engaging experience for your visitors.</p>
+        <h5>E-commerce Solutions</h5>
+        <p>Whether you're launching a new online store or seeking to enhance the performance
+         of your existing e-commerce platform, we provide comprehensive e-commerce 
+         solutions tailored to streamline operations, boost sales, and maximize ROI.</p>
+        <h5>Content Management Systems (CMS)</h5>
+        <p>We specialize in developing and integrating robust CMS solutions such as WordPress, 
+        Drupal, and Joomla, empowering you to easily manage and update your website 
+        content without requiring technical expertise.</p>
+        <h5>Web Application Development</h5>
+        <p>From dynamic web applications to interactive portals and enterprise-level systems, 
+        we have the expertise to conceptualize, design, and develop custom web applications
+         that meet your unique requirements and deliver exceptional user experiences.</p>
+        <h5>Website Maintenance and Support</h5>
+        <p>Our commitment to excellence extends beyond the initial launch. We offer ongoing
+         maintenance and support services to ensure the continued performance, 
+         security, and functionality of your website, as well as timely resolution of any issues
+          that may arise..</p>
+            <h5>SEO Optimization</h5>
+            <p>We implement SEO best practices to optimize your website for search engines, 
+            improve visibility, and drive organic traffic, helping you reach and engage
+             with your target audience more effectively.</p>
+            <h5>UI/UX Design</h5>
+            <p>Our talented design team combines creativity with usability principles to create 
+            intuitive and visually appealing user interfaces that enhance user engagement, 
+            increase conversion rates, and elevate your brand image.</p>
+        <h4>Why Choose Me</h4>
+        <h6>Expertise</h6>
+        <h6>Collaboration</h6>
+        <h6>Quality Assurance</h6>
+        <h6>Scalability</h6>
+        <h6>Support</h6>
+        <blockquote>
+            <cite>Hemanth Choppala</cite>
+        </blockquote>`,
     },
     {
       img: '../../assets/img/backend.jpg',
