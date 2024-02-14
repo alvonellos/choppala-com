@@ -167,7 +167,31 @@ export class ServicesComponent {
       details: `Leveraging Java, .NET and other technologies to develop server-side logic 
       and APIs that enable your app to run smoothly, scale effortlessly, and keep 
       business-critical functions operating at peak efficiency.`,
-      description: '',
+      description: `
+      <h2>Services</h2>
+      <h5>Custom Web Development</h5>
+      <p>Tailored frontend solutions crafted to meet your specific needs and requirements.</p>
+      <h5>Responsive Design</h5>
+      <p>Ensuring your website looks great and functions flawlessly across all devices and screen sizes.</p>
+      <h5>User Interface Design</h5>
+      <p>Designing intuitive, user-friendly interfaces that enhance user interaction and satisfaction.</p>
+      <h5>Cross-Browser Compatibility</h5>
+      <p>Guaranteeing consistent performance and appearance across different web browsers.</p>
+      <h5>Performance Optimization</h5>
+      <p>Fine-tuning your website for speed and efficiency, providing a seamless user experience.</p>
+      <h5>Accessibility</h5>
+      <p>Implementing accessibility best practices to ensure your website is usable by everyone, regardless of ability.</p>
+          <h5>Maintenance and Support</h5>
+          <p>Continuous support and maintenance services to keep your website running smoothly.</p>
+      <h4>Why Choose Me</h4>
+      <h6>Expertise</h6>
+      <h6>Collaboration</h6>
+      <h6>Quality Assurance</h6>
+      <h6>Scalability</h6>
+      <h6>Support</h6>
+      <blockquote>
+          <cite>Hemanth Choppala</cite>
+      </blockquote>`,
     },
     {
       img: '../../assets/img/frontend.jpg',
@@ -175,7 +199,31 @@ export class ServicesComponent {
       details: `Crafting responsive client-side solutions with rich functionality that 
       render blazingly fast across various screen sizes, with the help 
       of cutting-edge technologies such as Angular, React, and more.`,
-      description: ``,
+      description: `
+      <h2>Services</h2>
+      <h5>Custom Backend Development</h5>
+      <p>Tailored backend solutions designed to meet the unique requirements of your project.</p>
+      <h5>Database Design and Optimization</h5>
+      <p>Expertise in creating efficient database structures and optimizing queries for enhanced performance.</p>
+      <h5>API Development</h5>
+      <p>Building secure and reliable APIs to facilitate communication between different components of your application.</p>
+      <h5>Server Management and Deployment</h5>
+      <p>Ensuring smooth deployment and efficient management of servers to keep your application running flawlessly.</p>
+      <h5>Authentication and Authorization</h5>
+      <p> Implementing secure authentication and authorization mechanisms to safeguard your application's data.</p>
+      <h5>Data Processing and Analysis</h5>
+      <p>Leveraging backend technologies to process and analyze data, providing valuable insights for your business.</p>
+          <h5>Integration Services</h5>
+          <p>Integrating third-party services and APIs to extend the functionality of your application.</p>
+      <h4>Why Choose Me</h4>
+      <h6>Expertise</h6>
+      <h6>Collaboration</h6>
+      <h6>Quality Assurance</h6>
+      <h6>Scalability</h6>
+      <h6>Support</h6>
+      <blockquote>
+          <cite>Hemanth Choppala</cite>
+      </blockquote>`,
     }
   ];
 
